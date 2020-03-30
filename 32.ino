@@ -23,6 +23,28 @@ void loop() {
       Serial.print(latitud);
       Serial.print("Longitud");
       Serial.print(longitud);
+       //dia y hora
+
+    int ano;
+    byte mes, dia, hora, minuto, segundo, centesimo;
+    gps.crack_datetime(&ano, &mes, &dia, &hora, &minuto, &segundo, &centesimo);
+
+    Serial.print("Datos (GMT): ");
+    Serial.print(dia);
+    Serial.print("/");
+    Serial.print(mes);
+    Serial.print("/");
+    Serial.print(ano);
+
+    Serial.print("Horario: ");
+    Serial.print(hora);
+    Serial.print(":");
+    Serial.print(minuto);
+    Serial.print(":");
+    Serial.print(segundo);
+    Serial.print(":");
+    Serial.print(centesimo);
+
     }
   }
 
